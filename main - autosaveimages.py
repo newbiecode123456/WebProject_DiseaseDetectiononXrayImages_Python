@@ -103,18 +103,28 @@ def main():
             if class_name[2:] == "COVID19\n":
                 percentx = round(confidence_score,2) * 100
                 st.error("The uploaded X-ray film is predicted to have a risk of Covid-19 with an accuracy of " + str(percentx) + "%. You should perform specialized tests at the nearest medical facility as soon as possible.")
+                with open(os.path.join("dataset-collection/COVID19/",uploaded_image.name),"wb") as f:
+                    f.write(uploaded_image.getbuffer())
             elif class_name[2:] == "PNEUMONIA\n":
                 percentx = round(confidence_score,2) * 100
                 st.error("The uploaded X-ray film is predicted to have a risk of pneumonia with an accuracy of " + str(percentx) + "%. You should perform specialized tests at the nearest medical facility as soon as possible.")
+                with open(os.path.join("dataset-collection/PNEUMONIA/",uploaded_image.name),"wb") as f:
+                    f.write(uploaded_image.getbuffer())
             elif class_name[2:] == "PNEUMONIABACTERIAL\n":
                 percentx = round(confidence_score,2) * 100
                 st.error("The uploaded X-ray film is predicted to have a risk of bacterial pneumonia with an accuracy of " + str(percentx) + "%. You should perform specialized tests at the nearest medical facility as soon as possible.")
+                with open(os.path.join("dataset-collection/PNEUMONIABACTERIAL/",uploaded_image.name),"wb") as f:
+                    f.write(uploaded_image.getbuffer())
             elif class_name[2:] == "PNEUMONIAVIRAAL\n":
                 percentx = round(confidence_score,2) * 100
                 st.error("The uploaded X-ray film is predicted to have a risk of viral pneumonia with an accuracy of " + str(percentx) + "%. You should perform specialized tests at the nearest medical facility as soon as possible.")
+                with open(os.path.join("dataset-collection/PNEUMONIAVIRAL/",uploaded_image.name),"wb") as f:
+                    f.write(uploaded_image.getbuffer())
             elif class_name[2:] == "NORMAL\n":
                 percentx = round(confidence_score,2) * 100
                 st.success("The model does not predict any abnormalities, but if you have ANY SYMPTOMS of pneumonia, please go to the nearest medical facility immediately.")
+                with open(os.path.join("dataset-collection/NORMAL/",uploaded_image.name),"wb") as f:
+                    f.write(uploaded_image.getbuffer())
             else:
                 st.success("The model does not predict any abnormalities, but if you have ANY SYMPTOMS of pneumonia, please go to the nearest medical facility immediately.")
     
