@@ -109,7 +109,7 @@ def main():
             elif class_name[2:] == "PNEUMONIABACTERIAL\n":
                 percentx = round(confidence_score,2) * 100
                 st.error("The uploaded X-ray film is predicted to have a risk of bacterial pneumonia with an accuracy of " + str(percentx) + "%. You should perform specialized tests at the nearest medical facility as soon as possible.")
-            elif class_name[2:] == "PNEUMONIAVIRAAL\n":
+            elif class_name[2:] == "PNEUMONIAVIRAL\n":
                 percentx = round(confidence_score,2) * 100
                 st.error("The uploaded X-ray film is predicted to have a risk of viral pneumonia with an accuracy of " + str(percentx) + "%. You should perform specialized tests at the nearest medical facility as soon as possible.")
             elif class_name[2:] == "NORMAL\n":
